@@ -1,11 +1,15 @@
 const express = require("express")
 const MongoClient = require('mongodb').MongoClient
 const ObjectID = require('mongodb').ObjectID
+const cors = require('cors')
 const app = express()
 
 
 // -- New Body Parser since Express 4.16+
 app.use(express.json()); //Used to parse JSON bodies
+
+// -- Use CORS
+app.use(cors())
 
 
 // --------------------------------
