@@ -11,7 +11,7 @@ app.use(express.json()); //Used to parse JSON bodies
 // --------------------------------
 // Connect to MongoDB
 // --------------------------------
-
+const connectionString = "mongodb+srv://yoda:babyyoda1@cluster0.teg1d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 
 // -- -------------------------------------------- Routes
@@ -100,6 +100,6 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
 
 // -- Running the Server
 const PORT = 3030
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
 	console.log(`Listing on Port ${PORT}`)
 })
