@@ -99,7 +99,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
 
 
 // -- Running the Server
-const PORT = 3030
-app.listen(process.env.PORT || PORT, () => {
+const PORT = process.env.PORT || PORT
+app.listen(PORT, () => {
 	console.log(`Listing on Port ${PORT}`)
 })
